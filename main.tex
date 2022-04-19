@@ -1,0 +1,62 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath,mathtools} 
+\usepackage{amsfonts}  
+\usepackage{graphicx}  
+\usepackage{times}
+\usepackage{gensymb}
+\usepackage{algorithm2e}
+\usepackage{circuitikz}
+\graphicspath{{images/}}
+\DeclareGraphicsExtensions{.pdf,.eps,.ps,.png,.jpg,.jpeg}
+
+\title{ AI1110 Assignment 2}
+\author{AI21BTECH11001 }
+\date{April 2022}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+    ICSE Grade 12th 2017
+\end{center}
+
+\textbf{Question 3(b) :} If A,B and C are the elements of Boolean Algebra,simplify the expression\\
+$(A^\prime + B^\prime)(A + C^\prime) + B^\prime(B + C)$. 
+Draw the simplified expression
+
+\textbf{Solution:}
+\begin{align}
+ =& (A^\prime + B^\prime)(A + C^\prime) + B^\prime(B + C)\\
+ =& A^\prime(A + C^\prime) + B^\prime(A + C^\prime)+ B^\prime B+ B^\prime C\\
+  =&A^\prime A +A^\prime C^\prime + B^\prime A + B^\prime C^\prime +B^\prime B+ B^\prime C
+\end{align}
+$$\because A A^\prime = O$$
+\begin{align}
+=& O +A^\prime C^\prime + B^\prime A + B^\prime C^\prime+ O+ B^\prime C\\
+=& A^\prime C^\prime + B^\prime A + B^\prime(C +C^\prime)
+\end{align}
+$$\because A+ A^\prime = I $$
+\begin{align}
+   =& A^\prime C^\prime + B^\prime A + B^\prime(I)\\
+   =& A^\prime C^\prime + B^\prime (A + I)
+\end{align}
+$$\because A+ I = I $$
+\begin{align}
+   =  A^\prime C^\prime + B^\prime
+\end{align}
+
+   \centering
+    \begin{circuitikz}
+    \draw (-1,0) to (0,0);
+    \draw (0,0) to (0,1);
+    \draw (0,1) [V,l = $A^\prime$] to (2,1)  ;
+    \draw (2,1) [V,l = $C^\prime$] to (4,1)  ;
+    \draw (0,0) to (0,-1);
+    \draw (0,-1) [V,l = $B^\prime$] to (4,-1)  ;
+    \draw (4,1) to (4,-1);
+    \draw (4,0) to (5,0);
+    \end{circuitikz}
+
+\end{document}
